@@ -30,15 +30,15 @@ classdef grid
             v = gridObj.map(gridX,gridY);
         end
         
-        function [fresh] = setVisited(gridObj,gridX,gridY)
+        function [gridObj fresh] = setVisited(gridObj,gridX,gridY)
             if ~visited(gridObj,gridX, gridY)
                 fresh = true;
             end
             gridObj.map(gridX,gridY) = 1;
         end
         
-        function [fresh] = setCollision(gridObj,gridX,gridY)
-            if ~visited(gridX, gridY)
+        function [gridObj fresh] = setCollision(gridObj,gridX,gridY)
+            if ~visited(gridObj,gridX, gridY)
                 fresh = true;
             end
             gridObj.map(gridX,gridY) = 2;
